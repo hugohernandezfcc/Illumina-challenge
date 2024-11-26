@@ -1,6 +1,12 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Project: Illumina Salesforce Interview Coding Challenge
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This project includes the following key components:
+
+	•	4 Apex Classes: Backend logic that supports the business functionality.
+	•	1 Flow: Automates processes and orchestrates the interactions between objects and components.
+	•	3 Lightning Web Components (LWCs): Frontend components that deliver a dynamic user experience.
+
+Each of these elements works together to achieve the challenge’s requirements.
 
 ## How Do You Plan to Deploy Your Changes?
 

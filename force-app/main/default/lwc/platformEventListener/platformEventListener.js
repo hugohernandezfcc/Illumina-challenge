@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : hugo.hernandez
  * @group             : 
- * @last modified on  : 11-25-2024
+ * @last modified on  : 11-26-2024
  * @last modified by  : hugo.hernandez
  * Modifications Log
  * Ver   Date         Author           Modification
@@ -19,6 +19,7 @@ export default class PlatformEventListener extends LightningElement {
     messageReceived = false; 
     envetTypeField = ''; 
     eventAddressfield = ''; 
+    typeEventFrontEnd = '';
 
     connectedCallback() {
         this.subscribeToEvent();
@@ -33,6 +34,8 @@ export default class PlatformEventListener extends LightningElement {
             const eventData = response.data.payload;
             this.envetTypeField = eventData.Event_Type__c;
             this.eventAddressfield = eventData.Address__c;
+            this.typeEventFrontEnd = (this.envetTypeField === 'Account risk high') ? true : false; 
+            
 
             this.messageReceived = true;
         };

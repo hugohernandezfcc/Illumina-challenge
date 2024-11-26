@@ -2,7 +2,7 @@
   @description       : 
   @author            : hugo.hernandez
   @group             : 
-  @last modified on  : 11-25-2024
+  @last modified on  : 11-26-2024
   @last modified by  : hugo.hernandez
   Modifications Log
   Ver   Date         Author           Modification
@@ -17,7 +17,12 @@
                 <div class="slds-m-top_medium">
                     <p><strong>Received Event:</strong></p>
                     <p><strong>Event Type:</strong> {envetTypeField}</p>
-                    <p><strong>Address: </strong> {eventAddressfield}</p>
+                    <template lwc:if={typeEventFrontEnd}>
+                        <p><strong>Details: </strong> {eventAddressfield}</p>
+                    </template>
+                    <template lwc:else> 
+                        <p><strong>Address: </strong> {eventAddressfield}</p>
+                    </template>
                 </div>
             </template>
         </div>
