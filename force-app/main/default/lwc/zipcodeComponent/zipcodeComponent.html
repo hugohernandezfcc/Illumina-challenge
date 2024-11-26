@@ -1,0 +1,59 @@
+<!--
+  @description       : 
+  @author            : hugo.hernandez
+  @group             : 
+  @last modified on  : 11-15-2024
+  @last modified by  : hugo.hernandez
+  Modifications Log
+  Ver   Date         Author           Modification
+  1.0   11-15-2024   hugo.hernandez   Initial Version
+-->
+<template>
+    <lightning-card title="Zip Code Search" icon-name="utility:search">
+        <div class="slds-m-around_medium">
+            <lightning-select
+            name="zipCode"
+            label="Choose a zip code" 
+            value={valueCountry}
+            options={optionsCountry}
+            onchange={handleChange}
+            required ></lightning-select>
+
+            <lightning-input 
+                label="Enter Zip Code" 
+                value={zipCode} 
+                onchange={handleZipChange} 
+                placeholder="Enter US Zip Code"
+                maxlength="5">
+            </lightning-input>
+
+            <lightning-button 
+                label="Get Location Info" 
+                onclick={handleGetLocation} 
+                class="slds-m-top_small">
+            </lightning-button>
+
+            <template if:true={locationFound}>
+                <lightning-card  title="Location found">
+                    <p class="slds-p-horizontal_small">
+                        <strong>City:</strong> {city}<br/>
+                        <strong>State:</strong> {state}<br/>
+                        <strong>Country:</strong> {country}<br/>
+                    </p>
+
+                    <div slot="footer" class="slds-notify slds-notify_alert slds-alert_success" role="alert">
+                        <span class="slds-assistive-text">info</span>
+                        <h2>Address saved!</h2>
+                    </div>
+
+                </lightning-card>
+            </template>
+
+            <template if:true={errorMessage}>
+                <div class="slds-text-color_error slds-m-top_medium">
+                    {errorMessage}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

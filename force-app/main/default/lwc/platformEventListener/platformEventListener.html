@@ -1,0 +1,25 @@
+<!--
+  @description       : 
+  @author            : hugo.hernandez
+  @group             : 
+  @last modified on  : 11-25-2024
+  @last modified by  : hugo.hernandez
+  Modifications Log
+  Ver   Date         Author           Modification
+  1.0   11-15-2024   hugo.hernandez   Initial Version
+-->
+<template>
+    <lightning-card title="Platform Event Listener" icon-name="utility:live_message">
+        <div class="slds-m-around_medium">
+
+            
+            <template if:true={messageReceived}>
+                <div class="slds-m-top_medium">
+                    <p><strong>Received Event:</strong></p>
+                    <p><strong>Event Type:</strong> {envetTypeField}</p>
+                    <p><strong>Address: </strong> {eventAddressfield}</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
